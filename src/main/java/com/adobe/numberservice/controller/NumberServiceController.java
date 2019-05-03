@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,7 +24,7 @@ public class NumberServiceController {
 		this.romanService = converterService;
 	}
 	
-	@RequestMapping("/roman_number/{number}")
+	@GetMapping("/roman_number/{number}")
 	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") Integer inputNumber) {
 		logger.info("Received request to generate roman number for: "+inputNumber);
 		return romanService.getRomanValue(inputNumber);
