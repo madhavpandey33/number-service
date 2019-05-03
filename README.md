@@ -1,5 +1,5 @@
 # number-service
-Spring application responsible for performing number operation
+number service gives capabilities to perform multiple numerical operation over HTTP endpoint
 
 ## Pre-requisites:
 * Java v1.8
