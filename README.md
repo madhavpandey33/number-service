@@ -12,6 +12,7 @@ Spring application responsible for performing number operation
 You should be able to verify the server status from the console logs. Sever should start on default port - `8080`. And management endpoint will be available at `8082`
 
 * Application basepath: `http://localhost:8080/v1`
-* Management endpoint: `http://localhost:8082/actuator`
+* Management endpoint: [`http://localhost:8082/actuator`](http://localhost:8082/actuator)
+* Swagger documentation: [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html)
 
-Note: You can always change the port in `application.properties`.
+Note: You can always change the port in `application.properties`. 
