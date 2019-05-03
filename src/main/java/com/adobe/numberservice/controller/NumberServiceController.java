@@ -1,11 +1,14 @@
 package com.adobe.numberservice.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import com.adobe.numberservice.serv.RomanService;
 
 @Controller
 @RequestMapping("/v1")
@@ -13,9 +16,16 @@ public class NumberServiceController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(NumberServiceController.class);
 	
+	private RomanService romanService;
+	
+	@Autowired
+	public NumberServiceController(RomanService converterService) {
+		this.romanService = converterService;
+	}
+	
 	@RequestMapping("/roman_number/{number}")
-	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") String inputNumber) {
-		logger.info("Generating roman number for "+inputNumber);
-		return "This feature is currently not implemented but will be available soon.";
+	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") Integer inputNumber) {
+		logger.info("Received request to generate roman number for: "+inputNumber);
+		return romanService.getRomanValue(inputNumber);
 	}
 }
