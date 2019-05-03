@@ -59,7 +59,6 @@ public class RomanServiceImpl implements RomanService {
 	 * @param num of type int
 	 * @return Roman string value
 	 */
-
 	private static String intToRoman(int num) {
 		return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
 	}

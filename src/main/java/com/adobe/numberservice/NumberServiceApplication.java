@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Madhav Pandey
  *
  */
-
 @SpringBootApplication
 public class NumberServiceApplication {
 
