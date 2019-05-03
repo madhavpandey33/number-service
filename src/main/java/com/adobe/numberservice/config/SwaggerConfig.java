@@ -30,7 +30,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 *
 *               When the application is running the link to access would be
 *               http://<host>:<port>/swagger-ui.html
-*
+* @author Madhav Pandey
 */
 
 @EnableSwagger2
