@@ -1,36 +1,33 @@
 package com.adobe.numberservice.controller;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.adobe.numberservice.serv.RomanService;
-import com.adobe.numberservice.serv.impl.RomanServiceImpl;
 
+@RunWith(SpringJUnit4ClassRunner.class)
 public class NumberServiceController_UT {
 
-	private NumberServiceController numberServiceController;
-
+	@Mock
 	private RomanService romanService;
 
-	@Before
-	public void setup() {
-		romanService = mock(RomanServiceImpl.class);
-		numberServiceController = new NumberServiceController(romanService);
-	}
+	@InjectMocks
+	private NumberServiceController numberServiceController;
 	
 	@Test
 	public void testGetRomanNumber() {
 		// Arrange
 		String romanValue = "III";
 		Integer inputValue = 3;
-		when(romanService.getRomanValue(inputValue)).thenReturn(romanValue);
+		Mockito.when(romanService.getRomanValue(Mockito.any(Integer.class))).thenReturn(romanValue);
 		
 		// Act
 		String actualResult = this.numberServiceController.getRomanNumber(inputValue);
