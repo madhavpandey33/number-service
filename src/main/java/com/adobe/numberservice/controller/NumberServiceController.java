@@ -39,7 +39,6 @@ public class NumberServiceController {
 	 * @param inputNumber integer value as an input to this method to generate roman string literal
 	 * @return Roman string literal as @ResponseBody
 	 */
-	
 	@GetMapping("/roman_number/{number}")
 	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") Integer inputNumber) {
 		logger.info("Received request to generate roman number for: "+inputNumber);

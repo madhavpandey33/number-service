@@ -32,7 +32,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 *               http://<host>:<port>/swagger-ui.html
 * @author Madhav Pandey
 */
-
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
