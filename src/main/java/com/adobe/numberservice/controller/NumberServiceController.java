@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.adobe.numberservice.serv.RomanService;
 
+/**
+ * NumberServiceController class holds all the mapping to 
+ * different defined end points 
+ * @author Madhav Pandey
+ *
+ */
 @Controller
 @RequestMapping("/v1")
 public class NumberServiceController {
@@ -19,10 +25,20 @@ public class NumberServiceController {
 	
 	private RomanService romanService;
 	
+	/**
+	 * This method inject the romanService instance in to controller 
+	 * @param converterService
+	 */
 	@Autowired
 	public NumberServiceController(RomanService converterService) {
 		this.romanService = converterService;
 	}
+	
+	/**
+	 * 
+	 * @param inputNumber integer value as an input to this method to generate roman string literal
+	 * @return Roman string literal as @ResponseBody
+	 */
 	
 	@GetMapping("/roman_number/{number}")
 	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") Integer inputNumber) {
