@@ -5,7 +5,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -23,17 +22,6 @@ import com.adobe.numberservice.utils.NumberServiceTestUtils;
 public class NumberServiceApplicationWebLayerTests {
 	
     private MockMvc mockMvc;
-	
-	@Mock
-	private RomanService mockRomanService;
-	
-	@InjectMocks
-	private NumberServiceController mockNumberServiceController;
-	
-	@Before
-	public void setup() {
-		this.mockMvc = MockMvcBuilders.standaloneSetup(mockNumberServiceController).build();
-	}
 	
 	@Test
     public void shouldHaveTextPlainResponseType() throws Exception {
