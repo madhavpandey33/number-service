@@ -23,16 +23,8 @@ public class NumberServiceController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(NumberServiceController.class);
 	
-	private RomanService romanService;
-	
-	/**
-	 * This method inject the romanService instance in to controller 
-	 * @param converterService
-	 */
 	@Autowired
-	public NumberServiceController(RomanService converterService) {
-		this.romanService = converterService;
-	}
+	private RomanService romanService;
 	
 	/**
 	 * 
