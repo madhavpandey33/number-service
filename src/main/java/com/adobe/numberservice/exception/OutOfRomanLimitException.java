@@ -1,7 +1,7 @@
 package com.adobe.numberservice.exception;
 
 /**
- * OutOfRomanLimitException extends CustomNumberToRomanException
+ * OutOfRomanLimitException extends CustomNumberToRomanException.
  * @author Madhav Pandey
  *
  */

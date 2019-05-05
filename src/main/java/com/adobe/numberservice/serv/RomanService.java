@@ -12,9 +12,9 @@ public interface RomanService {
 	
 	/**
 	 * 
-	 * @param integerValue
+	 * @param integerValue Integer value to be converted to Roman number
 	 * @return Roman string value
-	 * @throws CustomNumberToRomanException
+	 * @throws CustomNumberToRomanException abstract class for holding application specific exceptions}
 	 */
 	public String getRomanValue(Object integerValue) throws CustomNumberToRomanException;
 
