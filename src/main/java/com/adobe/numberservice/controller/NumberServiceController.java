@@ -26,6 +26,11 @@ public class NumberServiceController {
 	@Autowired
 	private RomanService romanService;
 	
+	@GetMapping("/")
+	public  String homePage() {
+		return "index";
+	}
+	
 	/**
 	 * Roman number is a numeral in a system of notation that is based on the ancient
 	 * Roman system

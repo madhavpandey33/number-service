@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Number Service App</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/scripts/script.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	
+	<div class="convertSection gradient">
+	
+	  <div class="info">
+	    <h2>Number Service</h2>
+	    <p class="secodary-color">Play with numbers</p>
+	    <img src="/images/icon-01.svg" height="120" width="120" class="ns-icon">
+	    <p class="fun-fact">The Roman didn't find algebra very challenging, because X was always 10.</p>
+	  </div>
+	  
+	  <form action="/v1/roman_number/" method="GET" class="signupForm" name="romanNumberForm" id="romanNumberForm">
+	    <h2>Convert To Roman</h2>
+	    <ul class="noBullet">
+	      <li>
+	        <label for="inputNumber"></label>
+	        <input type="number" class="inputField" id="inputNumber" name="inputNumber" placeholder="Enter a Number..." oninput="hideErrorLabel()" value="" required/>
+	      </li>
+	      <li id="errorLabel">
+	      	<label>Please enter a number!</label>
+	      </li>
+	      <li id="center-btn">
+	        <button type="button" id="submitButton" onclick="convert()">Convert</button>
+	      </li>
+	      <li>
+	        <input type="text" class="inputField disabled" id="romanValue" name="romanValue" placeholder="Roman Value" disabled/>
+	      </li>
+	    </ul>
+	  </form>
+	</div>
+	
+	
+</body>
+
+</html>
