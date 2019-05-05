@@ -14,22 +14,23 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
-* @introduction The OpenAPI Specification (OAS) defines a standard,
-*               language-agnostic interface to RESTful APIs which allows both
-*               humans and computers to discover and understand the
-*               capabilities of the service without access to source code,
-*               documentation, or through network traffic inspection. When
-*               properly defined, a consumer can understand and interact with
-*               the remote service with a minimal amount of implementation
-*               logic.
+* The OpenAPI Specification (OAS) defines a standard,
+* language-agnostic interface to RESTful APIs which allows both
+* humans and computers to discover and understand the
+* capabilities of the service without access to source code,
+* documentation, or through network traffic inspection. When
+* properly defined, a consumer can understand and interact with
+* the remote service with a minimal amount of implementation
+* logic.
+*<p>
+*An OpenAPI definition can then be used by documentation
+*generation tools to display the API, code generation tools to
+*generate servers and clients in various programming languages,
+*testing tools, and many other use cases.
+*<p>
+*When the application is running the link to access would be
+*http://host:port/swagger-ui.html
 *
-*               An OpenAPI definition can then be used by documentation
-*               generation tools to display the API, code generation tools to
-*               generate servers and clients in various programming languages,
-*               testing tools, and many other use cases.
-*
-*               When the application is running the link to access would be
-*               http://<host>:<port>/swagger-ui.html
 * @author Madhav Pandey
 */
 @EnableSwagger2

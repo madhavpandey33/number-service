@@ -13,6 +13,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.adobe.numberservice.serv.RomanService;
 
+/**
+ * This class tests the NumberService controller.
+ * @author Madhav Pandey
+ *
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 public class NumberServiceController_UT {
 
@@ -22,6 +28,14 @@ public class NumberServiceController_UT {
 	@InjectMocks
 	private NumberServiceController numberServiceController;
 	
+	/**
+	 * This method tests the getRomanNumber method.
+	 * <p>
+	 * Here, Roman service getRomanValue method is mocked and returns a Roman value.
+	 * The returned value from the controller function is verified against the Roman 
+	 * value returned by service and also number of calls to romanService getRomanValue
+	 * method is verified.
+	 */
 	@Test
 	public void testGetRomanNumber() {
 		// Arrange

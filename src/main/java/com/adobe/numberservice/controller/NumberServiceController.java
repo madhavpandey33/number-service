@@ -27,9 +27,12 @@ public class NumberServiceController {
 	private RomanService romanService;
 	
 	/**
+	 * Roman number is a numeral in a system of notation that is based on the ancient
+	 * Roman system
 	 * 
-	 * @param inputNumber integer value as an input to this method to generate roman string literal
+	 * @param inputNumber integer value as an input to this method to generate Roman string literal
 	 * @return Roman string literal as @ResponseBody
+	 * @see <a href="https://en.wikipedia.org/wiki/Roman_numerals">https://en.wikipedia.org/wiki/Roman_numerals</a>
 	 */
 	@GetMapping("/roman_number/{number}")
 	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") Integer inputNumber) {
