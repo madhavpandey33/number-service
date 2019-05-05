@@ -26,6 +26,11 @@ public class NumberServiceController {
 	@Autowired
 	private RomanService romanService;
 	
+	@GetMapping("/")
+	public  String homePage() {
+		return "index";
+	}
+	
 	/**
 	 * 
 	 * @param inputNumber integer value as an input to this method to generate roman string literal
