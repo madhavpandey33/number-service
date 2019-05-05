@@ -1,10 +1,11 @@
 # number-service
-number service is developed in Spring boot application which enables one to perform multiple numerical operation through an thymeleaf app.
+number service is developed in Spring boot application which enables one to perform multiple numerical operation through a thymeleaf app.
 
 # Table of contents
 * [Supported Feature](#supported-feature)
 * [Technologies Used](#technologies-used)
 * [Methodology Used](#methodology-used)
+* [Test Coverage Specification](#test-coverage-specification)
 * [Packaging Layout](#packaging-layout)
 * [Pre-requisites](#pre-requisites)
 * [Build Deploy](#build-deploy)
@@ -44,8 +45,12 @@ Following are the steps taken to develop this project:
 
 This project tried to follow `TDD - Test Driven Development` approach wherein the tests are written first. These tests are then run to validate the test harness working and it also confirms the need to add new code to support the tests.
 
-After writing the new code, the tests are again run against the new code to validate if it meets the business logic. If it doesn't meet,then code is refactored and tests are ran again. And the cycle continue unitll all the test pass.
+After writing the new code, the tests are again run against the new code to validate if it meets the business logic. If it doesn't,then code is refactored and tests are ran again. And the cycle continue untill all the test pass.
 
+## Test Coverage Specification
+
+* Coverage check type: Instruction
+* Coverage check treshold: 95%
 
 ## Packaging Layout
 
@@ -124,7 +129,7 @@ Following are the available endpoints:
 
 ![alt text](/images/landing-page.png)
 
-* Management endpoint: [`http://localhost:8082/actuator`]
+* Management endpoint: `http://localhost:8082/actuator`
 
 ```
 {
@@ -172,8 +177,19 @@ Following are the available endpoints:
   }
 }
 ```
+The `/health` endpoint allows the dev-ops check the health status of the application.
+The `/prometheus` endpoint provides the dev-ops with system monitoring and alerting capabilities. Furthermore, it allows provides a multi-dimensional data model with time series data identified by metric name and key/value pairs.
 
-* Swagger documentation: [`http://localhost:8080/swagger-ui.html`]
-![alt text](/images/swagger-landing-page.png) Click on the individual end points to explore and test
+Prometheus can be integrated with GRAFANA to provide real time querying feature on prometheus data. 
+
+
+* Swagger documentation: `http://localhost:8080/swagger-ui.html`
+
+![alt text](/images/swagger-landing-page.png) Click on the individual end points to explore more and test them.
 
 ## References
+Follwing are the used references for this project:
+
+* Documentation: [Roman Numberals](https://en.wikipedia.org/wiki/Roman_numerals), [TDD](https://en.wikipedia.org/wiki/Test-driven_development)
+* Image: [Background Image](https://www.pexels.com/photo/lots-of-numbers-1314543/)
+* Quote: [Fun fact quote](https://in.pinterest.com/pin/435934438906562711/)
