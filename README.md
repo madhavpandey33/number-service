@@ -178,7 +178,7 @@ Following are the available endpoints:
 }
 ```
 The `/health` endpoint allows the dev-ops check the health status of the application.
-The `/prometheus` endpoint provides the dev-ops with system monitoring and alerting capabilities. Furthermore, it allows provides a multi-dimensional data model with time series data identified by metric name and key/value pairs.
+The `/prometheus` endpoint provides the dev-ops with system monitoring and alerting capabilities. Furthermore, it provides a multi-dimensional data model with time series data identified by metric name and key/value pairs.
 
 Prometheus can be integrated with GRAFANA to provide real time querying feature on prometheus data. 
 
