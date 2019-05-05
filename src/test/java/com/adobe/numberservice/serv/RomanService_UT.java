@@ -11,6 +11,10 @@ import com.adobe.numberservice.exception.EmptyInputException;
 import com.adobe.numberservice.exception.OutOfRomanLimitException;
 import com.adobe.numberservice.serv.impl.RomanServiceImpl;
 
+/**
+ * This class is responsible for testing Roman service.
+ * @author Madhav Pandey
+ */
 public class RomanService_UT {
 
 	private RomanService romanService;
@@ -18,11 +22,18 @@ public class RomanService_UT {
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 	
+	/**
+	 * This is pre-test setup method which creates a instance for Roman service class.
+	 */
 	@Before
 	public void setup() {
 		romanService = new RomanServiceImpl();
 	}
 	
+	/**
+	 * This test `getRomanValue` method which asserts the actual 
+	 * conversion to Roman number string.
+	 */
 	@Test
 	public void testGetRomanValue() {
 		// Arrange
@@ -36,6 +47,10 @@ public class RomanService_UT {
 		assertEquals(romanValue, actualResult);
 	}
 	
+	/**
+	 * This test `getRomanValue` method which checks for empty
+	 * input and verifies if EmptyInputException was thrown.
+	 */
 	@Test
 	public void testGetRomanValue_EmptyInputException() {
 		// Arrange
@@ -49,6 +64,10 @@ public class RomanService_UT {
 		romanService.getRomanValue(integerInput);
 	}
 	
+	/**
+	 * This test `getRomanValue` method which checks for out of limit
+	 * input and verifies if OutOfRomanLimitException was thrown.
+	 */
 	@Test
 	public void testGetRomanValue_OutOfRomanLimitException() {
 		// Arrange

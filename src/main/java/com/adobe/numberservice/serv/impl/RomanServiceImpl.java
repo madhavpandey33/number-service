@@ -30,8 +30,12 @@ public class RomanServiceImpl implements RomanService {
 
 	
 	/**
-	 * 
 	 * {@inheritDoc}
+	 * <p>
+	 * Other than calling the actual method for Roman number,
+	 * this method also handles the edge case logic for null value as well as 
+	 * value which are out of the limit and throws a custom scenario specific
+	 * exception
 	 */
 	@Override
 	public String getRomanValue(Object integerValue) {
@@ -55,7 +59,7 @@ public class RomanServiceImpl implements RomanService {
 	}
 	
 	/**
-	 * 
+	 * This method is actual logic for converting int to Roman numberal
 	 * @param num of type int
 	 * @return Roman string value
 	 */
