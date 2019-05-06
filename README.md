@@ -125,7 +125,7 @@ Note: You can always change the port in `application.properties`.
 * Run docker container by executing this command <pre> docker run -p 8080:8081 -p 8082:8082 --name number-service -d number-service:1.0  </pre>
 
 Following are the available endpoints:
-* Application basepath: `http://localhost:8080/v1`
+* Application basepath: `http://localhost:8080/v1/`
 
 ![alt text](/images/landing-page.png)
 
