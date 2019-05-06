@@ -63,7 +63,6 @@ Below is the layout for this project:
 │       └── config
 │           └── SwaggerConfig.java
 │       └── controller                               (Holds all the controller classses)
-│           └── ErrorController.java
 │           └── NumberServiceController.java
 │       └── exception                                (Holds all the custom exception classses)
 │           └── CustomNumberToRomanException.java
@@ -89,6 +88,7 @@ Below is the layout for this project:
 │            └── images
 │                └── bg-01.svg
 │                └── icon-01.svg
+│                └── loader.gif
 │            └── scripts
 │                └── script.js
 │       └── templates
