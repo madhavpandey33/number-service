@@ -9,6 +9,7 @@ number service is developed in Spring boot application which enables one to perf
 * [Packaging Layout](#packaging-layout)
 * [Pre-requisites](#pre-requisites)
 * [Build Deploy](#build-deploy)
+* [Running Instance](#running-instance)
 * [References](#references)
 
 
@@ -125,7 +126,7 @@ Note: You can always change the port in `application.properties`.
 * Run docker container by executing this command <pre> docker run -p 8080:8081 -p 8082:8082 --name number-service -d number-service:1.0  </pre>
 
 Following are the available endpoints:
-* Application basepath: `http://localhost:8080/v1`
+* Application basepath: `http://localhost:8080/v1/`
 
 ![alt text](/images/landing-page.png)
 
@@ -186,6 +187,12 @@ Prometheus can be integrated with GRAFANA to provide real time querying feature 
 * Swagger documentation: `http://localhost:8080/swagger-ui.html`
 
 ![alt text](/images/swagger-landing-page.png) Click on the individual end points to explore more and test them.
+
+## Running Instance:
+
+* Application Endpoint: http://ec2-3-80-206-252.compute-1.amazonaws.com:8080/v1/
+* Swagger Documentation: http://ec2-3-80-206-252.compute-1.amazonaws.com:8080/swagger-ui.html
+* Actuator: http://ec2-3-80-206-252.compute-1.amazonaws.com:8082/actuators
 
 ## References
 Follwing are the used references for this project:
