@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.adobe</groupId>
 	<artifactId>number-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>number-service</name>
-	<description>Utility app to perform number operations </description>
+	<description>Utility app to perform number operations</description>
 
 	<properties>
 		<java.version>1.8</java.version>
