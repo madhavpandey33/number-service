@@ -21,10 +21,11 @@
 		    <ul class="noBullet">
 		      <li>
 		        <label for="inputNumber"></label>
-		        <input type="number" class="inputField" id="inputNumber" name="inputNumber" placeholder="Enter a Number..." oninput="hideErrors(); " value="" required/>
+		        <input type="number" class="inputField" id="inputNumber" name="inputNumber" placeholder="Enter a Number..." min="1"
+                  step="1" oninput="validateInput()" onkeypress="window.currentAscii = event.charCode" value="" required/>
 		      </li>
 		      <li id="errorLabel">
-		      	<label>Please enter a number!</label>
+		      	<label>Please enter a non decimal number!</label>
 		      </li>
 		      <li id="center-btn">
 		        <button type="button" id="submitButton" onclick="convert()">Convert</button>

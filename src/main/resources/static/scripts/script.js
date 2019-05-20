@@ -17,11 +17,12 @@ function convert() {
 				hideLodingGif();
 				$("#serverError").html(error.responseJSON.message);
 				$("#errorResponse").show();
+				$("#romanValue").val("");
 			}
 		});
 	} else {
 		hideLodingGif();
-		$("#errorLabel").show();
+		showErrorLabel();
 	}
 }
 
@@ -32,4 +33,20 @@ function hideErrors(){
 
 function hideLodingGif(){
 	$("#animated-gif").hide();
+}
+
+function showErrorLabel(){
+	$("#errorLabel").show();
+	$("#romanValue").val("");
+}
+
+function validateInput(){
+	if(window.currentAscii == 46){
+		window.currentAscii = null;
+		$("#errorLabel").show();
+		$("#errorResponse").hide();
+	} else {
+		hideErrors();
+	}
+	
 }
