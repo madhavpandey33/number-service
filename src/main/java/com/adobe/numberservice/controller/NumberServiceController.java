@@ -26,7 +26,7 @@ public class NumberServiceController {
 	@Autowired
 	private RomanService romanService;
 	
-	@GetMapping("/")
+	@GetMapping({"/", ""})
 	public  String homePage() {
 		return "index";
 	}
@@ -40,7 +40,7 @@ public class NumberServiceController {
 	 * @see <a href="https://en.wikipedia.org/wiki/Roman_numerals">https://en.wikipedia.org/wiki/Roman_numerals</a>
 	 */
 	@GetMapping("/roman_number/{number}")
-	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") Integer inputNumber) {
+	public @ResponseBody String getRomanNumber(@PathVariable(value= "number") String inputNumber) {
 		logger.info("Received request to generate roman number for: "+inputNumber);
 		return romanService.getRomanValue(inputNumber);
 	}

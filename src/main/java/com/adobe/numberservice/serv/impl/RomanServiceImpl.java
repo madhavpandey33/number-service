@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.adobe.numberservice.exception.EmptyInputException;
+import com.adobe.numberservice.exception.InputFormatException;
 import com.adobe.numberservice.exception.OutOfRomanLimitException;
 import com.adobe.numberservice.serv.RomanService;
 
@@ -43,15 +44,23 @@ public class RomanServiceImpl implements RomanService {
 		
 		// Check for input value to be null
 		if (integerValue == null) {
-			logger.debug("Input cannot be empty");
+			logger.error("Input cannot be empty");
 			throw new EmptyInputException("Input cannot be empty");
 		}
 		
-		int input = (int)integerValue;
+		int input = -1;
+		try {
+			input = (int)Integer.valueOf((String)integerValue);
+		} catch(Exception e) {
+			if(e instanceof NumberFormatException) {
+				logger.error("Input number format not supported.");
+				throw new InputFormatException("Input number format not supported.");
+			}
+		}
 		
 		// Check if the input is with the defined limit
 		if (input > 3999 || input <= 0) {
-			logger.debug("Input needs to be > 0 and <= 3999");
+			logger.error("Input needs to be > 0 and <= 3999");
 			throw new OutOfRomanLimitException("Input needs to be > 0 and <= 3999");
 		}
 		
@@ -59,7 +68,7 @@ public class RomanServiceImpl implements RomanService {
 	}
 	
 	/**
-	 * This method is actual logic for converting int to Roman numberal
+	 * This method is actual logic for converting int to Roman numeral
 	 * @param num of type int
 	 * @return Roman string value
 	 */

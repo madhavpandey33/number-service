@@ -40,15 +40,15 @@ public class NumberServiceController_UT {
 	public void testGetRomanNumber() {
 		// Arrange
 		String romanValue = "III";
-		Integer inputValue = 3;
-		Mockito.when(romanService.getRomanValue(Mockito.any(Integer.class))).thenReturn(romanValue);
+		String inputValue = "3";
+		Mockito.when(romanService.getRomanValue(Mockito.any(String.class))).thenReturn(romanValue);
 		
 		// Act
 		String actualResult = this.numberServiceController.getRomanNumber(inputValue);
 		
 		// Assert
 		assertEquals(romanValue, actualResult);
-		verify(romanService, times(1)).getRomanValue(Mockito.any(Integer.class));
+		verify(romanService, times(1)).getRomanValue(Mockito.any(String.class));
 	}
 
 }

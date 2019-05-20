@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.adobe.numberservice.exception.EmptyInputException;
+import com.adobe.numberservice.exception.InputFormatException;
 import com.adobe.numberservice.exception.OutOfRomanLimitException;
 import com.adobe.numberservice.serv.impl.RomanServiceImpl;
 
@@ -37,7 +38,7 @@ public class RomanService_UT {
 	@Test
 	public void testGetRomanValue() {
 		// Arrange
-		Object integerInput = 3;
+		String integerInput = "3";
 		String romanValue = "III";
 		
 		// Act
@@ -76,6 +77,23 @@ public class RomanService_UT {
 		// Assert
 		thrown.expect(OutOfRomanLimitException.class);
 		thrown.expectMessage("Input needs to be > 0 and <= 3999");
+		
+		// Act
+		romanService.getRomanValue(integerInput);
+	}
+	
+	/**
+	 * This test `getRomanValue` method which checks for out of limit
+	 * input and verifies if InputFormatException was thrown.
+	 */
+	@Test
+	public void testGetRomanValue_InputFormatException() {
+		// Arrange
+		String integerInput = "301.2";
+		
+		// Assert
+		thrown.expect(InputFormatException.class);
+		thrown.expectMessage("Input number format not supported.");
 		
 		// Act
 		romanService.getRomanValue(integerInput);
